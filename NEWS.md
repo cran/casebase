@@ -1,3 +1,9 @@
+# casebase 0.9.1
+
+* Fixed issue with `plot.singleEventCB()` when `visreg` package is not loaded.
+* Improved error message when using `family = "glmnet"` with a single covariate.
+* Introduced `summary` method for objects of class `singleEventCB`, and improved the output of `print` by displaying the appropriate function call.
+
 # casebase 0.9.0
 
 This is a *Major new release*
