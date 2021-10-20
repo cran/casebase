@@ -1,5 +1,3 @@
-context("glmnet")
-
 # Skip tests if gbm is not installed
 testthat::skip_if_not_installed("glmnet")
 
@@ -183,7 +181,6 @@ risk <- try(absoluteRisk(fit_glmnet, time = 1,
 risk_log <- try(absoluteRisk(fit_glmnet_log, time = 1,
                              newdata = new_x, nsamp = 100),
                 silent = TRUE)
-
 
 test_that("no error in absoluteRisk with glmnet", {
     expect_false(inherits(risk, "try-error"))

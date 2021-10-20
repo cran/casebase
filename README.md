@@ -5,8 +5,6 @@
 
 <!-- badges: start -->
 
-[![Build
-Status](https://api.travis-ci.org/sahirbhatnagar/casebase.svg?branch=master)](https://travis-ci.org/github/sahirbhatnagar/casebase)
 [![Coverage
 Status](https://img.shields.io/codecov/c/github/sahirbhatnagar/casebase/master.svg)](https://codecov.io/github/sahirbhatnagar/casebase?branch=master)
 [![CRAN](https://www.r-pkg.org/badges/version/casebase?color=blue)](https://cran.r-project.org/package=casebase)
@@ -15,6 +13,7 @@ Status](https://img.shields.io/codecov/c/github/sahirbhatnagar/casebase/master.s
 status](https://ci.appveyor.com/api/projects/status/github/sahirbhatnagar/casebase?branch=master&svg=true)](https://ci.appveyor.com/project/sahirbhatnagar/casebase)
 [![Lifecycle:
 maturing](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://lifecycle.r-lib.org/articles/stages.html)
+[![R-CMD-check](https://github.com/sahirbhatnagar/casebase/workflows/R-CMD-check/badge.svg)](https://github.com/sahirbhatnagar/casebase/actions)
 <!-- badges: end -->
 
 `casebase` is an R package for fitting flexible and fully parametric
@@ -63,7 +62,7 @@ example usage of the functions. This includes
 6.  [Plot Cumulative Incidence and Survival
     Curves](http://sahirbhatnagar.com/casebase/articles/plotabsRisk.html)
 
-## useR\! 2019 Toulouse - Presentation
+## useR! 2019 Toulouse - Presentation
 
 [![Jesse
 useR](man/figures/jesse-user.png)](https://www.youtube.com/watch?v=DlppjRYVklQ)
@@ -128,26 +127,35 @@ summary(fit)
 #> 
 #> Deviance Residuals: 
 #>     Min       1Q   Median       3Q      Max  
-#> -0.2479  -0.1482  -0.1373  -0.1268   3.1490  
+#> -0.2441  -0.1474  -0.1368  -0.1272   3.1398  
 #> 
 #> Coefficients:
-#>                                   Estimate Std. Error z value Pr(>|z|)    
-#> (Intercept)                       -5.85621    0.30013 -19.512  < 2e-16 ***
-#> treatmentestPro                    0.66414    0.37783   1.758   0.0788 .  
-#> ns(time, df = 3)1                 -0.41110    0.35944  -1.144   0.2527    
-#> ns(time, df = 3)2                  0.77792    0.73254   1.062   0.2883    
-#> ns(time, df = 3)3                  1.37771    0.34131   4.036 5.43e-05 ***
-#> treatmentestPro:ns(time, df = 3)1  0.07468    0.48613   0.154   0.8779    
-#> treatmentestPro:ns(time, df = 3)2 -1.40359    0.94189  -1.490   0.1362    
-#> treatmentestPro:ns(time, df = 3)3 -1.06823    0.48634  -2.196   0.0281 *  
+#>                                   Estimate Std. Error z value
+#> (Intercept)                       -5.87406    0.30068 -19.536
+#> treatmentestPro                    0.65528    0.37780   1.734
+#> ns(time, df = 3)1                 -0.37685    0.36055  -1.045
+#> ns(time, df = 3)2                  0.82888    0.73435   1.129
+#> ns(time, df = 3)3                  1.33620    0.34430   3.881
+#> treatmentestPro:ns(time, df = 3)1  0.01662    0.48792   0.034
+#> treatmentestPro:ns(time, df = 3)2 -1.42088    0.94245  -1.508
+#> treatmentestPro:ns(time, df = 3)3 -1.04687    0.48685  -2.150
+#>                                   Pr(>|z|)    
+#> (Intercept)                        < 2e-16 ***
+#> treatmentestPro                   0.082832 .  
+#> ns(time, df = 3)1                 0.295935    
+#> ns(time, df = 3)2                 0.259015    
+#> ns(time, df = 3)3                 0.000104 ***
+#> treatmentestPro:ns(time, df = 3)1 0.972831    
+#> treatmentestPro:ns(time, df = 3)2 0.131645    
+#> treatmentestPro:ns(time, df = 3)3 0.031533 *  
 #> ---
 #> Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 #> 
 #> (Dispersion parameter for binomial family taken to be 1)
 #> 
 #>     Null deviance: 3635.4  on 32723  degrees of freedom
-#> Residual deviance: 3613.4  on 32716  degrees of freedom
-#> AIC: 3629.4
+#> Residual deviance: 3615.6  on 32716  degrees of freedom
+#> AIC: 3631.6
 #> 
 #> Number of Fisher Scoring iterations: 7
 ```
@@ -220,7 +228,6 @@ output of `fitSmoothHazard`:
       singleEventCB:
         - glm
         - gam
-        - gbm
         - cv.glmnet
       CompRisk:
         - vglm
@@ -233,20 +240,20 @@ inherits from `vglm`.
 
 This package is makes use of several existing packages including:
 
-  - [`VGAM`](https://cran.r-project.org/package=VGAM) for fitting
+-   [`VGAM`](https://cran.r-project.org/package=VGAM) for fitting
     multinomial logistic regression models
-  - [`survival`](https://cran.r-project.org/package=survival) for
+-   [`survival`](https://cran.r-project.org/package=survival) for
     survival models
-  - [`ggplot2`](https://cran.r-project.org/package=ggplot2) for plotting
+-   [`ggplot2`](https://cran.r-project.org/package=ggplot2) for plotting
     the population time plots
-  - [`data.table`](https://cran.r-project.org/package=data.table) for
+-   [`data.table`](https://cran.r-project.org/package=data.table) for
     efficient handling of large datasets
 
 Other packages with similar objectives but different parametric forms:
 
-  - [`rstpm2`](https://cran.r-project.org/package=rstpm2)
-  - [`flexsurv`](https://cran.r-project.org/package=flexsurv)
-  - [`SmoothHazard`](https://cran.r-project.org/package=SmoothHazard)
+-   [`rstpm2`](https://cran.r-project.org/package=rstpm2)
+-   [`flexsurv`](https://cran.r-project.org/package=flexsurv)
+-   [`SmoothHazard`](https://cran.r-project.org/package=SmoothHazard)
 
 ## Citation
 
@@ -255,23 +262,26 @@ citation('casebase')
 #> 
 #> To cite casebase in publications use:
 #> 
-#> Bhatnagar S, Turgeon M, Islam J, Saarela O, Hanley J (2020). _casebase:
-#> Fitting Flexible Smooth-in-Time Hazards and Risk Functions via Logistic
-#> and Multinomial Regression_. R package version 0.9.0, <URL:
+#> Bhatnagar S, Turgeon M, Islam J, Saarela O, Hanley J (2020).
+#> _casebase: Fitting Flexible Smooth-in-Time Hazards and Risk
+#> Functions via Logistic and Multinomial Regression_. R package
+#> version 0.9.0, <URL:
 #> https://CRAN.R-project.org/package=casebase>.
 #> 
-#>   Hanley, James A., and Olli S. Miettinen. Fitting smooth-in-time
-#>   prognostic risk functions via logistic regression. International
-#>   Journal of Biostatistics 5.1 (2009): 1125-1125.
+#>   Hanley, James A., and Olli S. Miettinen. Fitting
+#>   smooth-in-time prognostic risk functions via logistic
+#>   regression. International Journal of Biostatistics 5.1
+#>   (2009): 1125-1125.
 #> 
-#>   Saarela, Olli. A case-base sampling method for estimating recurrent
-#>   event intensities. Lifetime data analysis 22.4 (2016): 589-605.
+#>   Saarela, Olli. A case-base sampling method for estimating
+#>   recurrent event intensities. Lifetime data analysis 22.4
+#>   (2016): 589-605.
 #> 
 #> If competing risks analyis is used, please also cite
 #> 
-#>   Saarela, Olli, and Elja Arjas. Non-parametric Bayesian Hazard
-#>   Regression for Chronic Disease Risk Assessment. Scandinavian Journal
-#>   of Statistics 42.2 (2015): 609-626.
+#>   Saarela, Olli, and Elja Arjas. Non-parametric Bayesian
+#>   Hazard Regression for Chronic Disease Risk Assessment.
+#>   Scandinavian Journal of Statistics 42.2 (2015): 609-626.
 #> 
 #> To see these entries in BibTeX format, use 'print(<citation>,
 #> bibtex=TRUE)', 'toBibtex(.)', or set
@@ -280,9 +290,9 @@ citation('casebase')
 
 ## Contact
 
-  - Issues: <https://github.com/sahirbhatnagar/casebase/issues>
-  - Pull Requests: <https://github.com/sahirbhatnagar/casebase/>
-  - e-mail: <sahir.bhatnagar@gmail.com>, <max.turgeon@umanitoba.ca>
+-   Issues: <https://github.com/sahirbhatnagar/casebase/issues>
+-   Pull Requests: <https://github.com/sahirbhatnagar/casebase/>
+-   e-mail: <sahir.bhatnagar@gmail.com>, <max.turgeon@umanitoba.ca>
 
 ## Latest news
 

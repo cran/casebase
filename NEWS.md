@@ -1,3 +1,10 @@
+# casebase 0.10.1
+
+* Fixed issue 143 and return the data invisibly with `plot.singleEventCB()` when `type = "hr"`.
+* Removed `family = "gbm"` as it wasn't properly tested.
+* Added `confint.singleEventCB` to compute confidence bands for the risk (or survival) function.
+* Updated `ERSPC` data so that the exposure variable is categorical. This may break previous code explicitly making this conversion, or somehow relying on the numerical coding.
+
 # casebase 0.9.1
 
 * Fixed issue with `plot.singleEventCB()` when `visreg` package is not loaded.
