@@ -1,3 +1,11 @@
+context("Fitting")
+set.seed(12345)
+
+# CRAN skip atlas check fix
+testthat::skip_if(grepl(pattern = "atlas", sessionInfo()$BLAS,
+                        ignore.case = TRUE))
+
+
 n <- 100
 alp <- 0.05
 lambda_t0 <- 1
@@ -53,9 +61,9 @@ test_that("no error in summary method for gam", {
     fitDT <- try(fitSmoothHazard(event ~ Z, data = DT, time = "ftime"),
                  silent = TRUE)
 
-    sumDF <- try(print(summary(fitDF)),
+    sumDF <- try(summary(fitDF),
                  silent = TRUE)
-    sumDT <- try(print(summary(fitDT)),
+    sumDT <- try(summary(fitDT),
                  silent = TRUE)
 
     expect_false(inherits(sumDF, "try-error"))

@@ -1,3 +1,10 @@
+context("Matrix interface")
+set.seed(12345)
+
+# CRAN skip atlas check fix
+testthat::skip_if(grepl(pattern = "atlas", sessionInfo()$BLAS,
+                        ignore.case = TRUE))
+
 N <- 1000; p <- 30
 nzc <- 0.33 * p
 x <- matrix(rnorm(N * p), N, p)

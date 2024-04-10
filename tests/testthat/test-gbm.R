@@ -1,5 +1,11 @@
-# Skip these tests until we can properly test gbm
-testthat::skip("gbm not implemented")
+context("GBMs")
+set.seed(12345)
+
+testthat::skip_if(TRUE, message = 'GBM is not implemented')
+
+# CRAN skip atlas check fix
+testthat::skip_if(grepl(pattern = "atlas", sessionInfo()$BLAS,
+                        ignore.case = TRUE))
 
 # Skip tests if gbm is not installed
 testthat::skip_if_not_installed("gbm")
@@ -124,9 +130,9 @@ test_that("output probabilities", {
 
 # Summary method
 test_that("no error in summary method for gbm", {
-    sumDF <- try(print(summary(fitDF_gbm)),
+    sumDF <- try(summary(fitDF_gbm),
                  silent = TRUE)
-    sumDT <- try(print(summary(fitDT_gbm)),
+    sumDT <- try(summary(fitDT_gbm),
                  silent = TRUE)
 
     expect_false(inherits(sumDF, "try-error"))

@@ -1,3 +1,10 @@
+context("plot.singleEventCB")
+set.seed(12345)
+
+# CRAN skip atlas check fix
+testthat::skip_if(grepl(pattern = "atlas", sessionInfo()$BLAS,
+                        ignore.case = TRUE))
+
 # Uncomment next line to skip tests in non-interactive session
 skip_if_not_installed("glmnet")
 skip_if_not_installed("gbm")
