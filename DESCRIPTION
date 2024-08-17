@@ -2,8 +2,8 @@ Package: casebase
 Type: Package
 Title: Fitting Flexible Smooth-in-Time Hazards and Risk Functions via
         Logistic and Multinomial Regression
-Version: 0.10.5
-Date: 2024-04-09
+Version: 0.10.6
+Date: 2024-08-06
 Authors@R: c(
     person("Sahir", "Bhatnagar", , "sahir.bhatnagar@gmail.com", role = c("aut", "cre"),
            comment = "https://sahirbhatnagar.com/"),
@@ -38,7 +38,7 @@ BugReports: https://github.com/sahirbhatnagar/casebase/issues
 RoxygenNote: 7.3.0
 Encoding: UTF-8
 NeedsCompilation: no
-Packaged: 2024-04-09 21:23:07 UTC; maxturgeon
+Packaged: 2024-08-17 22:57:52 UTC; rstudio
 Author: Sahir Bhatnagar [aut, cre] (https://sahirbhatnagar.com/),
   Maxime Turgeon [aut] (https://www.maxturgeon.ca/),
   Jesse Islam [aut] (https://www.jesseislam.com/),
@@ -47,4 +47,4 @@ Author: Sahir Bhatnagar [aut, cre] (https://sahirbhatnagar.com/),
   James Hanley [aut] (https://jhanley.biostat.mcgill.ca/)
 Maintainer: Sahir Bhatnagar <sahir.bhatnagar@gmail.com>
 Repository: CRAN
-Date/Publication: 2024-04-10 12:00:06 UTC
+Date/Publication: 2024-08-17 23:20:05 UTC
