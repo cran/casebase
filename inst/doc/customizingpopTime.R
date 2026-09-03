@@ -113,17 +113,17 @@ color_cols <- colorspace::darken(col = fill_cols, amount = 0.3)
                    "Base series" = color_cols[2]))
 
 ## ----eval=FALSE---------------------------------------------------------------
-#  do.call("scale_fill_manual", utils::modifyList(
-#    list(name = element_blank(),
-#         breaks = c("Case series", "Competing event", "Base series"),
-#         values = old_cols), list(values = fill_colors))
-#  )
-#  
-#  do.call("scale_colour_manual", utils::modifyList(
-#    list(name = element_blank(),
-#         breaks = c("Case series", "Competing event", "Base series"),
-#         values = old_cols), list(values = color_colors))
-#  )
+# do.call("scale_fill_manual", utils::modifyList(
+#   list(name = element_blank(),
+#        breaks = c("Case series", "Competing event", "Base series"),
+#        values = old_cols), list(values = fill_colors))
+# )
+# 
+# do.call("scale_colour_manual", utils::modifyList(
+#   list(name = element_blank(),
+#        breaks = c("Case series", "Competing event", "Base series"),
+#        values = old_cols), list(values = color_colors))
+# )
 
 ## -----------------------------------------------------------------------------
 # this data ships with the casebase package
@@ -166,14 +166,14 @@ plot(popTimeData,
                           values = c("Relapse" = "blue", "Competing event" = "hotpink", "Base series" = "orange")))
 
 ## ----eval=FALSE---------------------------------------------------------------
-#  # this will work because mapping is the name of the
-#  # argument of the list
-#  case.params = list(mapping = aes(x = time, y = yc, colour = "Relapse", fill = "Relapse"))
+# # this will work because mapping is the name of the
+# # argument of the list
+# case.params = list(mapping = aes(x = time, y = yc, colour = "Relapse", fill = "Relapse"))
 
 ## ----eval=FALSE---------------------------------------------------------------
-#  # this will NOT work because the argument of the list has no name
-#  # and therefore utils::modifyList, will not override the defaults.
-#  case.params = list(aes(x = time, y = yc, colour = "Relapse", fill = "Relapse"))
+# # this will NOT work because the argument of the list has no name
+# # and therefore utils::modifyList, will not override the defaults.
+# case.params = list(aes(x = time, y = yc, colour = "Relapse", fill = "Relapse"))
 
 ## ----echo=FALSE, eval=TRUE----------------------------------------------------
 print(sessionInfo(), locale = F)

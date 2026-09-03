@@ -44,6 +44,7 @@ plot(pt_object_strat,
      add.base.series = TRUE)
 
 ## ----error=TRUE---------------------------------------------------------------
+try({
 # load data
 data(bmtcrr)
 str(bmtcrr)
@@ -53,6 +54,7 @@ table(bmtcrr$Status, bmtcrr$D)
 
 # error because it can't determine a time variable
 popTimeData <- popTime(data = bmtcrr)
+})
 
 ## -----------------------------------------------------------------------------
 popTimeData <- popTime(data = bmtcrr, time = "ftime")
